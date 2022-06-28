@@ -1,24 +1,20 @@
 package Intellij_Selenium;
 
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Demo {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         //Setting the driver path
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\BakaNorman_h9jkhqw\\Downloads\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\Driver\\chromedriver.exe");
 
         //Creating WebDriver instance
         WebDriver driver = new ChromeDriver();
 
-        //Navigate to web page
+        /*//Navigate to web page
         driver.get("https://demoqa.com/login");
 
         //Maximizing window
@@ -56,7 +52,13 @@ public class Demo {
         }
         catch (Exception e) {
             System.out.println("Incorrect login....");
-        }
+        }*/
+
+        CreateNewCustomerTest createNewCustomerTest = new CreateNewCustomerTest(driver);
+        createNewCustomerTest.runTest();
+
+        CustomerLoginTest customerLoginTest = new CustomerLoginTest(driver);
+        customerLoginTest.runTest();
 
         //Closing browser session
         driver.quit();
