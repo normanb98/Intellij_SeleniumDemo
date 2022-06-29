@@ -14,9 +14,6 @@ public class CreateNewCustomerTest {
 
         driver.navigate().to("https://www.way2automation.com/angularjs-protractor/banking/#/login");
 
-        /*new WebDriverWait(driver, TimeSpan.FromSeconds(5)).Until(
-        d => d.FindElement(By.TagName("div")));*/
-
         Thread.sleep(2000);
 
         LoginPage loginPage = new LoginPage(driver);
