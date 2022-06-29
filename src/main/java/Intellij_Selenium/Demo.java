@@ -57,8 +57,14 @@ public class Demo {
         CreateNewCustomerTest createNewCustomerTest = new CreateNewCustomerTest(driver);
         createNewCustomerTest.runTest();
 
+        OpenAccountTest openAccountTest = new OpenAccountTest(driver);
+        openAccountTest.runTest();
+
         CustomerLoginTest customerLoginTest = new CustomerLoginTest(driver);
         customerLoginTest.runTest();
+
+        DepositWithdrawTest depositWithdrawTest = new DepositWithdrawTest(driver);
+        depositWithdrawTest.runTest();
 
         //Closing browser session
         driver.quit();
