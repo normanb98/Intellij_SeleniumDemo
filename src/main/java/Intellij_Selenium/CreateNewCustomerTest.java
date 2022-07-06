@@ -1,15 +1,20 @@
 package Intellij_Selenium;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class CreateNewCustomerTest {
 
     protected WebDriver driver;
 
-    public CreateNewCustomerTest(WebDriver driver) {
-        this.driver = driver;
+    @BeforeTest
+    public void beforeTest() {
+        driver = InitWebDriver.getDriver();
     }
 
+    @Test (description = "Creating a customer and checking if the creation was successful")
     public void runTest() throws InterruptedException {
 
         driver.navigate().to("https://www.way2automation.com/angularjs-protractor/banking/#/login");
@@ -32,6 +37,7 @@ public class CreateNewCustomerTest {
         Thread.sleep(1000);
 
         try {
+            Assert.assertTrue(driver.switchTo().alert().getText().contains("Customer added successfully"));
             driver.switchTo().alert().accept();
             System.out.println(this.getClass().getSimpleName() + " PASSED");
 
@@ -40,4 +46,5 @@ public class CreateNewCustomerTest {
         }
 
     }
+
 }

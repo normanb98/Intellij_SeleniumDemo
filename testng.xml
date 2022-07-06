@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="Selenium Demo">
+        <classes>
+            <class name="Intellij_Selenium.CreateNewCustomerTest">
+                <methods>
+                    <include name="runTest"/>
+                </methods>
+            </class>
+            <class name="Intellij_Selenium.OpenAccountTest">
+                <methods>
+                    <include name="runTest"/>
+                </methods>
+            </class>
+            <class name="Intellij_Selenium.CustomerLoginTest">
+                <methods>
+                    <include name="runTest"/>
+                </methods>
+            </class>
+            <class name="Intellij_Selenium.DepositWithdrawTest">
+                <methods>
+                    <include name="runTest"/>
+                </methods>
+            </class>
+            <class name="Intellij_Selenium.InitWebDriver">
+            </class>
+        </classes>
+    </test>
+</suite>

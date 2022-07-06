@@ -1,15 +1,20 @@
 package Intellij_Selenium;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class OpenAccountTest {
 
     protected WebDriver driver;
 
-    public OpenAccountTest(WebDriver driver) {
-        this.driver = driver;
+    @BeforeTest
+    public void beforeTest() {
+        driver = InitWebDriver.getDriver();
     }
 
+    @Test (description = "Open an account for the customer and checking if it was successful")
     public void runTest() throws InterruptedException {
 
         OpenAccountPage openAccountPage = new OpenAccountPage(driver);
@@ -22,6 +27,7 @@ public class OpenAccountTest {
         Thread.sleep(1000);
 
         try {
+            Assert.assertTrue(driver.switchTo().alert().getText().contains("Account created successfully"));
             driver.switchTo().alert().accept();
             System.out.println(this.getClass().getSimpleName() + " PASSED");
 
@@ -30,4 +36,5 @@ public class OpenAccountTest {
         }
 
     }
+
 }
