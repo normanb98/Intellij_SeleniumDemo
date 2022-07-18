@@ -3,27 +3,27 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="Selenium Demo">
         <classes>
-            <class name="Intellij_Selenium.CreateNewCustomerTest">
+            <class name="main.java.Intellij_Selenium.CreateNewCustomerTest">
                 <methods>
                     <include name="runTest"/>
                 </methods>
             </class>
-            <class name="Intellij_Selenium.OpenAccountTest">
+            <class name="main.java.Intellij_Selenium.OpenAccountTest">
                 <methods>
                     <include name="runTest"/>
                 </methods>
             </class>
-            <class name="Intellij_Selenium.CustomerLoginTest">
+            <class name="main.java.Intellij_Selenium.CustomerLoginTest">
                 <methods>
                     <include name="runTest"/>
                 </methods>
             </class>
-            <class name="Intellij_Selenium.DepositWithdrawTest">
+            <class name="main.java.Intellij_Selenium.DepositWithdrawTest">
                 <methods>
                     <include name="runTest"/>
                 </methods>
             </class>
-            <class name="Intellij_Selenium.InitWebDriver">
+            <class name="main.java.Intellij_Selenium.InitWebDriver">
             </class>
         </classes>
     </test>
