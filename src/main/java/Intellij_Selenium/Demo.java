@@ -1,4 +1,4 @@
-package main.java.Intellij_Selenium;
+package Intellij_Selenium;
 
 import com.beust.jcommander.internal.Lists;
 import org.testng.TestListenerAdapter;
