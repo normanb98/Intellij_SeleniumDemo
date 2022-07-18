@@ -1,4 +1,4 @@
-package Intellij_Selenium;
+package main.java.Intellij_Selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -38,5 +38,18 @@ public class AddCustomerPage {
         else if (clickOn.equals("Customers")) {
             driver.findElement(customersBy).click();
         }
+    }
+
+    public void addFirstName(String firstName) {
+        driver.findElement(firstNameBy).sendKeys(firstName);
+    }
+    public void addLastName(String lastName) {
+        driver.findElement(lastNameBy).sendKeys(lastName);
+    }
+    public void addPostCode(String postCode) {
+        driver.findElement(postCodeBy).sendKeys(postCode);
+    }
+    public void addCustomerBy() {
+        driver.findElement(addCustomerBy).click();
     }
 }

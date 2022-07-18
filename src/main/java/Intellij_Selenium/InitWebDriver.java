@@ -1,4 +1,4 @@
-package Intellij_Selenium;
+package main.java.Intellij_Selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
