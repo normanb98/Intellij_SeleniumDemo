@@ -3,6 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="Selenium Demo">
         <classes>
+            <!-- <class name="Cucumber_Tests.TestRunner"></class> -->
             <class name="Intellij_Selenium.CreateNewCustomerTest">
                 <methods>
                     <include name="runTest"/>

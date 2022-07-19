@@ -1,30 +1,21 @@
-package cucumber_tests;
+package Cucumber_Tests;
 
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import main.java.Intellij_Selenium.AddCustomerPage;
-import main.java.Intellij_Selenium.BankManagerMainPage;
-import main.java.Intellij_Selenium.InitWebDriver;
-import main.java.Intellij_Selenium.LoginPage;
+import Intellij_Selenium.AddCustomerPage;
+import Intellij_Selenium.BankManagerMainPage;
+import Intellij_Selenium.LoginPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 public class CreateNewCustomerTestCucumber {
 
     protected WebDriver driver;
 
-    @Before
-    public void beforeTest() {
-        driver = InitWebDriver.getDriver();
-    }
-
     @Given("user is on home page")
     public void user_is_on_home_page() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\Driver\\chromedriver.exe");
-        driver = new ChromeDriver();
+        driver = TestRunner.getDriver();
         driver.navigate().to("https://www.way2automation.com/angularjs-protractor/banking/#/login");
         Thread.sleep(2000);
         //throw new io.cucumber.java.PendingException();
