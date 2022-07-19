@@ -1,15 +1,1 @@
-main\java\Intellij_Selenium\BankManagerMainPage.class
-main\java\Intellij_Selenium\TransactionsPage.class
-main\java\Intellij_Selenium\AddCustomerPage.class
-main\java\Intellij_Selenium\DepositWithdrawTest.class
-main\java\Intellij_Selenium\InitWebDriver.class
-main\java\Intellij_Selenium\CustomerLoginTest.class
-main\java\Intellij_Selenium\OpenAccountTest.class
 cucumber_tests\CreateNewCustomerTestCucumber.class
-main\java\Intellij_Selenium\CustomersPage.class
-main\java\Intellij_Selenium\LoggedInCustomerPage.class
-main\java\Intellij_Selenium\OpenAccountPage.class
-main\java\Intellij_Selenium\CreateNewCustomerTest.class
-main\java\Intellij_Selenium\Demo.class
-main\java\Intellij_Selenium\LoginPage.class
-main\java\Intellij_Selenium\CustomerMainPage.class

@@ -1,4 +1,4 @@
-package main.java.Intellij_Selenium;
+package Intellij_Selenium;
 
 import com.beust.jcommander.internal.Lists;
 import org.testng.TestListenerAdapter;
@@ -11,7 +11,6 @@ public class Demo {
 
     public static void main(String[] args) {
 
-        TestListenerAdapter tla = new TestListenerAdapter();
         TestNG testng = new TestNG();
         List<String> suites = Lists.newArrayList();
         suites.add("./testng.xml");
