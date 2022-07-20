@@ -2,6 +2,7 @@ package Intellij_Selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class CustomersPage {
     protected WebDriver driver;
@@ -47,6 +48,17 @@ public class CustomersPage {
         }
         else if (sortBy.equals("Post Code")) {
             driver.findElement(sortByPostCodeBy).click();
+        }
+    }
+
+    public void verifyName(String user) {
+        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[1]/strong/span")).getText(), user);
+
+        if ((driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[1]/strong/span")).getText()).equals(user)) {
+            System.out.println(this.getClass().getSimpleName() + " PASSED");
+        }
+        else {
+            System.out.println(this.getClass().getSimpleName() + " FAILED");
         }
     }
 }
