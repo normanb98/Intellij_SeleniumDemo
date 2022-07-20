@@ -25,4 +25,8 @@ public class CustomerMainPage {
 
         driver.findElement(loginBy).click();
     }
+
+    public void clickLogin() {
+        driver.findElement(loginBy).click();
+    }
 }
