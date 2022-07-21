@@ -11,7 +11,7 @@ public class LoggedInCustomerPage {
     private By accountNumberBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/strong[1]");
     private By balanceBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/strong[2]");
     private By currencyBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/strong[3]");
-    private By depositBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[3]/button[2]");
+    public By depositBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[3]/button[2]");
     private By withdrawBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[3]/button[3]");
     private By transactionsBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[3]/button[1]");
     private By accountBy = By.xpath("//*[@id='accountSelect']");
