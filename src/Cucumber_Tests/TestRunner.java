@@ -1,7 +1,7 @@
 package Cucumber_Tests;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.openqa.selenium.WebDriver;
@@ -16,14 +16,14 @@ public class TestRunner extends AbstractTestNGCucumberTests {
         return driver;
     }
 
-    @Before
-    public void createWebDriver(){
+    @BeforeAll
+    public static void before_all(){
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\Driver\\chromedriver.exe");
         driver = new ChromeDriver();
     }
 
-    @After
-    public void deleteWebDriver(){
+    @AfterAll
+    public static void after_all(){
         driver.quit();
     }
 

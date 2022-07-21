@@ -49,4 +49,26 @@ public class OpenAccountPage {
             driver.findElement(customersBy).click();
         }
     }
+
+    public void selectCustomer(String customer) {
+
+        WebElement dropdownCustomer = driver.findElement(customerNameBy);
+        Select selectElementCustomer = new Select(dropdownCustomer);
+
+        selectElementCustomer.selectByVisibleText(customer);
+
+    }
+
+    public void selectCurrency(String currency) {
+
+        WebElement dropdownCurrency = driver.findElement(currencyBy);
+        Select selectElementCurrency = new Select(dropdownCurrency);
+
+        selectElementCurrency.selectByVisibleText(currency);
+
+    }
+
+    public void processBy() {
+        driver.findElement(processBy).click();
+    }
 }
