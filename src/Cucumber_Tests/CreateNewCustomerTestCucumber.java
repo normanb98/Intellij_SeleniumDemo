@@ -20,13 +20,15 @@ public class CreateNewCustomerTestCucumber {
         Thread.sleep(2000);
         //throw new io.cucumber.java.PendingException();
     }
-    @When("select  Bank manager login")
+
+    @When("select Bank manager login")
     public void select_bank_manager_login() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.clickOnButton("Bank Manager Login");
         Thread.sleep(1000);
         //throw new io.cucumber.java.PendingException();
     }
+
     @When("select Add customer")
     public void select_add_customer() throws InterruptedException {
         BankManagerMainPage bankManagerMainPage = new BankManagerMainPage(driver);
@@ -34,6 +36,7 @@ public class CreateNewCustomerTestCucumber {
         Thread.sleep(1000);
         //throw new io.cucumber.java.PendingException();
     }
+
     @Then("add First name")
     public void add_first_name() throws InterruptedException {
         AddCustomerPage addCustomerPage = new AddCustomerPage(driver);
@@ -41,6 +44,7 @@ public class CreateNewCustomerTestCucumber {
         Thread.sleep(1000);
         //throw new io.cucumber.java.PendingException();
     }
+
     @Then("add last name")
     public void add_last_name() throws InterruptedException {
         AddCustomerPage addCustomerPage = new AddCustomerPage(driver);
@@ -48,6 +52,7 @@ public class CreateNewCustomerTestCucumber {
         Thread.sleep(1000);
         //throw new io.cucumber.java.PendingException();
     }
+
     @Then("add Post code")
     public void add_post_code() throws InterruptedException {
         AddCustomerPage addCustomerPage = new AddCustomerPage(driver);
@@ -55,6 +60,7 @@ public class CreateNewCustomerTestCucumber {
         Thread.sleep(1000);
         //throw new io.cucumber.java.PendingException();
     }
+
     @Then("click Add customer")
     public void click_add_customer() throws InterruptedException {
         AddCustomerPage addCustomerPage = new AddCustomerPage(driver);
@@ -62,7 +68,8 @@ public class CreateNewCustomerTestCucumber {
         Thread.sleep(1000);
         //throw new io.cucumber.java.PendingException();
     }
-    @Then("verify Chrome pop-up")
+
+    @Then("verify new customer Chrome pop-up")
     public void verify_chrome_pop_up() {
         try {
             Assert.assertTrue(driver.switchTo().alert().getText().contains("Customer added successfully"));
@@ -74,4 +81,5 @@ public class CreateNewCustomerTestCucumber {
         }
         //throw new io.cucumber.java.PendingException();
     }
+
 }
