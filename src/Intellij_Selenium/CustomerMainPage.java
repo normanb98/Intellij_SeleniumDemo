@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 public class CustomerMainPage {
     protected WebDriver driver;
 
-    private By yourNameBy = By.xpath("//*[@id='userSelect']");
+    public By yourNameBy = By.xpath("//*[@id='userSelect']");
     private By loginBy = By.xpath("/html/body/div[3]/div/div[2]/div/form/button");
     private By homeBy = By.xpath("/html/body/div[3]/div/div[1]/button[1]");
 
