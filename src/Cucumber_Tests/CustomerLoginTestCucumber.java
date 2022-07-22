@@ -19,30 +19,30 @@ public class CustomerLoginTestCucumber {
 
 
     @Given("user is on home page")
-    public void user_is_on_home_page() throws InterruptedException {
+    public void user_is_on_home_page() {
         LoginPage loginPage = new LoginPage(driver);
         driver = TestRunner.getDriver();
         driver.navigate().to("https://www.way2automation.com/angularjs-protractor/banking/#/login");
-        new WebDriverWait(driver, Duration.ofSeconds(3))
+        new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions
                         .elementToBeClickable(loginPage.customerLoginBy));
     }
 
     @When("select Customer Login")
-    public void select_customer_login() throws InterruptedException {
+    public void select_customer_login() {
         CustomerMainPage customerMainPage = new CustomerMainPage(driver);
         LoginPage loginPage = new LoginPage(driver);
         loginPage.clickOnButton("Customer Login");
-        new WebDriverWait(driver, Duration.ofSeconds(3))
+        new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(driver -> driver.findElement(customerMainPage.yourNameBy));
     }
 
     @Then("select Harry Potter")
-    public void select_harry_potter() throws InterruptedException {
+    public void select_harry_potter() {
         LoggedInCustomerPage loggedInCustomerPage = new LoggedInCustomerPage(driver);
         CustomerMainPage customerMainPage = new CustomerMainPage(driver);
         customerMainPage.loginCustomer("Harry Potter");
-        new WebDriverWait(driver, Duration.ofSeconds(3))
+        new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(driver -> driver.findElement(loggedInCustomerPage.depositBy));
     }
 

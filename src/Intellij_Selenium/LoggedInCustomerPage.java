@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class LoggedInCustomerPage {
     protected WebDriver driver;
@@ -12,7 +13,7 @@ public class LoggedInCustomerPage {
     private By balanceBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/strong[2]");
     private By currencyBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/strong[3]");
     public By depositBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[3]/button[2]");
-    private By withdrawBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[3]/button[3]");
+    public By withdrawBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[3]/button[3]");
     private By transactionsBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[3]/button[1]");
     private By accountBy = By.xpath("//*[@id='accountSelect']");
     private By homeBy = By.xpath("/html/body/div[3]/div/div[1]/button[1]");
@@ -74,6 +75,18 @@ public class LoggedInCustomerPage {
         }
         else if (clickOn.equals("Logout")) {
             driver.findElement(logoutBy).click();
+        }
+    }
+
+    public void verifyAmount(String amount) {
+        LoggedInCustomerPage loggedInCustomerPage = new LoggedInCustomerPage(driver);
+        Assert.assertEquals(loggedInCustomerPage.getBalance(), amount);
+
+        if ((loggedInCustomerPage.getBalance()).equals(amount)) {
+            System.out.println(this.getClass().getSimpleName() + " PASSED");
+        }
+        else {
+            System.out.println(this.getClass().getSimpleName() + " FAILED");
         }
     }
 }

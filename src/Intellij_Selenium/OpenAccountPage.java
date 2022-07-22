@@ -4,17 +4,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class OpenAccountPage {
     protected WebDriver driver;
 
     private By customerNameBy = By.xpath("//*[@id='userSelect']");
     private By currencyBy = By.xpath("//*[@id='currency']");
-    private By processBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div/div/form/button");
+    public By processBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div/div/form/button");
     private By addCustomerBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[1]/button[1]");
-    private By openAccountBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[1]/button[2]");
+    public By openAccountBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[1]/button[2]");
     private By customersBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[1]/button[3]");
-    private By homeBy = By.xpath("/html/body/div[3]/div/div[1]/button[1]");
+    public By homeBy = By.xpath("/html/body/div[3]/div/div[1]/button[1]");
 
     public OpenAccountPage(WebDriver driver) {
         this.driver = driver;
@@ -70,5 +71,16 @@ public class OpenAccountPage {
 
     public void processBy() {
         driver.findElement(processBy).click();
+    }
+
+    public void verifyPopUp(String popUpString) {
+        try {
+            Assert.assertTrue(driver.switchTo().alert().getText().contains(popUpString));
+            driver.switchTo().alert().accept();
+            System.out.println(this.getClass().getSimpleName() + " PASSED");
+
+        } catch (Exception e) {
+            System.out.println(this.getClass().getSimpleName() + " FAILED");
+        }
     }
 }

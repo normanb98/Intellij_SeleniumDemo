@@ -9,7 +9,7 @@ public class AddCustomerPage {
     private By firstNameBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div/div/form/div[1]/input");
     private By lastNameBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div/div/form/div[2]/input");
     private By postCodeBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div/div/form/div[3]/input");
-    private By addCustomerBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div/div/form/button");
+    public By addCustomerBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div/div/form/button");
     private By openAccountBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[1]/button[2]");
     private By customersBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[1]/button[3]");
     private By homeBy = By.xpath("/html/body/div[3]/div/div[1]/button[1]");
