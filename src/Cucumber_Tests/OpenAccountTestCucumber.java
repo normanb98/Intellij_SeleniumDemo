@@ -5,7 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 public class OpenAccountTestCucumber {
 
@@ -14,52 +15,42 @@ public class OpenAccountTestCucumber {
     @Given("user is on bank manager page")
     public void user_is_on_bank_manager_page() {
         driver = TestRunner.getDriver();
-        //throw new io.cucumber.java.PendingException();
     }
 
     @When("select Open Account")
     public void select_open_account() throws InterruptedException {
         OpenAccountPage openAccountPage = new OpenAccountPage(driver);
         openAccountPage.clickOnButton("Open Account");
-        Thread.sleep(1000);
-        //throw new io.cucumber.java.PendingException();
+        Thread.sleep(2000);
     }
 
     @Then("select Customer")
-    public void select_customer() throws InterruptedException {
+    public void select_customer() {
         OpenAccountPage openAccountPage = new OpenAccountPage(driver);
         openAccountPage.selectCustomer("Test Cucumber");
-        Thread.sleep(1000);
-        //throw new io.cucumber.java.PendingException();
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(driver -> driver.findElement(openAccountPage.processBy));
     }
 
     @Then("select Currency")
-    public void select_currency() throws InterruptedException {
+    public void select_currency() {
         OpenAccountPage openAccountPage = new OpenAccountPage(driver);
         openAccountPage.selectCurrency("Dollar");
-        Thread.sleep(1000);
-        //throw new io.cucumber.java.PendingException();
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(driver -> driver.findElement(openAccountPage.processBy));
     }
 
     @Then("click Process")
-    public void click_process() throws InterruptedException {
+    public void click_process() {
         OpenAccountPage openAccountPage = new OpenAccountPage(driver);
         openAccountPage.processBy();
-        Thread.sleep(1000);
-        //throw new io.cucumber.java.PendingException();
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(driver -> driver.switchTo().alert());
     }
 
     @Then("verify open account Chrome pop-up")
     public void verify_chrome_pop_up() {
-        try {
-            Assert.assertTrue(driver.switchTo().alert().getText().contains("Account created successfully"));
-            driver.switchTo().alert().accept();
-            System.out.println(this.getClass().getSimpleName() + " PASSED");
-
-        } catch (Exception e) {
-            System.out.println(this.getClass().getSimpleName() + " FAILED");
-        }
-        //throw new io.cucumber.java.PendingException();
+        OpenAccountPage openAccountPage = new OpenAccountPage(driver);
+        openAccountPage.verifyPopUp("Account created successfully");
     }
-
 }
