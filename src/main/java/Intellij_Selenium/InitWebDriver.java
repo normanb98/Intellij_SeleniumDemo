@@ -15,11 +15,8 @@ public class InitWebDriver {
 
     @BeforeSuite
     public void beforeSuite() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
-        page = new CheckoutPage(driver);
-        page.navigate();
+        System.setProperty("webdriver.chrome.driver", "./chromedriver.exe"); 
+        driver = new ChromeDriver();
  
     }
 
