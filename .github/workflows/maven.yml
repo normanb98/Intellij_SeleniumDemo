@@ -29,8 +29,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      env:
-        DB_URL: ${{ github.workspace }}
       run: mvn clean test
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
