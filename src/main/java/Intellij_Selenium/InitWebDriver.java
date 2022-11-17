@@ -14,10 +14,8 @@ public class InitWebDriver {
 
     @BeforeSuite
     public void beforeSuite() {
-        from selenium import webdriver
-        from webdriver_manager.chrome import ChromeDriverManager
-
-        driver = webdriver.Chrome(ChromeDriverManager().install())
+        System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
+        driver = new ChromeDriver();
     }
 
     @AfterSuite (alwaysRun = true)
