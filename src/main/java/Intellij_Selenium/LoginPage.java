@@ -10,9 +10,9 @@ public class LoginPage {
     private By bankManagerLoginBy = By.xpath("/html/body/div[3]/div/div[2]/div/div[1]/div[2]/button");
     private By homeBy = By.xpath("/html/body/div[3]/div/div[1]/button[1]");
 
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-    }
+//     public LoginPage(WebDriver driver) {
+//         this.driver = driver;
+//     }
 
     public void clickOnButton(String clickOn) {
         if (clickOn.equals("Home")) {
