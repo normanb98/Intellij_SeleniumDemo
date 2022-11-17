@@ -14,16 +14,6 @@ on:
   pull_request:
     branches: [ "master" ]
     
-  workflow_dispatch:
-    inputs:
-      browser:
-        type: choice
-        description: Which browser to test
-        required: true
-        options:
-          - chrome
-          - firefox
-          - edge
 
 jobs:
   build:
