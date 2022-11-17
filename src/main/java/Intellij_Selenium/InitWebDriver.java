@@ -14,7 +14,7 @@ public class InitWebDriver {
 
     @BeforeSuite
     public void beforeSuite() {
-        System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "home/chromedriver.exe");
         driver = new ChromeDriver();
     }
 
