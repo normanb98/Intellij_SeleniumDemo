@@ -12,10 +12,6 @@ public class InitWebDriver {
         return driver;
     }
     
-    @BeforeAll
- public static void classInit() {
- WebDriverManager.chromedriver().setup();
- }
 
     @BeforeSuite
     public void beforeSuite() {
